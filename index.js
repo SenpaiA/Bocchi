@@ -32,7 +32,7 @@ const  exclusivo  =  JSON . analizar ( fs . readFileSync ( './src/exclusive.json
 const  samih  =  JSON . analizar ( fs . readFileSync ( './src/simi.json' ) )
 const  vcard  =  'COMIENZO: VCARD \ n' 
             +  'VERSIÓN: 3.0 \ n' 
-            +  'FN: Senpai Admin \ n' 
+            +  'FN: Argote Admin \ n' 
             +  'ORG: Pengembang XBot; \ n' 
             +  'TEL; tipo = CELDA; tipo = VOZ; waid = 593995743368: +593995743368 \ n' 
             +  'FIN: VCARD' 
@@ -267,7 +267,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 				caso  'información' :
 					yo  =  cliente . usuario
 					uptime  =  proceso . tiempo de actividad ( )
-					teks  =  `* Nombre del bot *: $ { me . nombre } \ n * PROPIETARIO *: * Senpai miad * \ n * AUTOR *: AMPIBI \ n * Nombre del bot *: @ $ { me . jid . split ( '@' ) [ 0 ] } \ n * Prefijo *: $ { prefix } \ n * Total de contactos bloqueados *: $ { bloqueados . length } \ n * EL ESTA ACTIVO DESDE HACE *: $ { kyun ( tiempo de actividad ) } `
+					teks  =  `* Nombre del bot *: $ { me . nombre } \ n * PROPIETARIO *: * ꧁⟦⸙ꪶ • Λ̸Я̸G̸Ө̸Ŧ̸Σ̸₂₀₁₉ • ꫂ⸙⟧ ^ Iᴠᴄ꧂ * \ n * AUTOR *: AMPIBI \ n * Nombre del bot *: @ $ { me . jid . split ( '@' ) [ 0 ] } \ n * Prefijo *: $ { prefix } \ n * Total de contactos bloqueados *: $ { bloqueados . length } \ n * EL ESTA ACTIVO DESDE HACE *: $ { kyun ( tiempo de actividad ) } `
 					buffer  =  aguardar  getBuffer ( me . imgUrl )
 					cliente . sendMessage ( desde ,  búfer ,  imagen ,  { título : teks ,  contextInfo : { mencionadoJid : [ me . jid ] } } )
 					descanso
