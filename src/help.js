@@ -1,5 +1,6 @@
-const help = (prefix) => {
-	return `
+
+const help = (prefix) => { 
+	return `                 
 ┏━━❉ *𝗜𝗡𝗙𝗢 𝗗𝗘𝗟 𝗕𝗢𝗧* ❉━━┓
 ┣⊱ *${prefix}owner*
 ┣⊱ *${prefix}donasi*
@@ -84,11 +85,12 @@ const help = (prefix) => {
 ┣⊱ *${prefix}setpp*
 ┣⊱ *${prefix}setprefix*
 ┣━━━━━━━━━━━━━━
-┃ *BOT MODIFICADO POR ARGOTE Y CONTRIBUCIONES DE NEHRO*
+┃ *BOT MODIFICADO POR ARGOTE, DISFRUTEN*
 ┗━━━━━━━━━━━━━━
-
 `
 }
-
 exports.help = help
 
+
+
+  
