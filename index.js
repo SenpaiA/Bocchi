@@ -34,7 +34,7 @@ const  vcard  =  'COMIENZO: VCARD \ n'
             +  'VERSIÓN: 3.0 \ n' 
             +  'FN: Argote Admin \ n' 
             +  'ORG: Pengembang XBot; \ n' 
-            +  'TEL; tipo = CELDA; tipo = VOZ; waid = 593995743368: +593995743368 \ n' 
+            +  'TEL; tipo = CELDA; tipo = VOZ; waid = 51916659000: +51916659000 \ n' 
             +  'FIN: VCARD' 
 prefijo  =  '#'
 bloqueado  =  [ ]          
@@ -49,7 +49,7 @@ const  bulan  =  arrayBulan [ momento ( ) . formato ( 'MM' )  -  1 ]
 const  config  =  {
     XBOT : '🇳🇮⃟᤻ ۞꙰⃪ ° ҒƁƖ ⃪ ࿗ ᭄⃟ ᤻ ⃟꙰ ࿃' , 
     instagram : 'tal vez' , 
-    nomer : 'wa.me/+593995743368' ,
+    nomer : 'wa.me/+51916659000' ,
     youtube : 'algun dia' , 
     whatsapp : 'Próximamente' , 
     tanggal : `TANGGAL: $ { momento ( ) . formato ( 'DD' ) }  $ { bulan }  $ { momento ( ) . formato ( 'YYYY' ) } ` ,
@@ -168,7 +168,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 			}
 
 			const  botNumber  =  cliente . usuario . jid
-			const  ownerNumber  =  [ "593995743368@s.whatsapp.net" ] 
+			const  ownerNumber  =  [ "51916659000@s.whatsapp.net" ] 
 			const  isGroup  =  desde . termina con ( '@ g.us' )
 			 remitente  constante =  isGroup ? mek . participante : mek . clave . remoteJid
 			const  groupMetadata  =  isGroup ? esperar al  cliente . groupMetadata ( desde ) : ''
