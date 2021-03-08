@@ -31,8 +31,8 @@ const  nsfw  =  JSON . analizar ( fs . readFileSync ( './src/nsfw.json' ) )
 const  exclusivo  =  JSON . analizar ( fs . readFileSync ( './src/exclusive.json' ) )
 const  samih  =  JSON . analizar ( fs . readFileSync ( './src/simi.json' ) )
 const  vcard  =  'COMIENZO: VCARD \ n' 
-            +  'VERSIÓN: 3.0 \ n' 
-            +  'FN: Argote Admin \ n' 
+            +  'VERSIÓN: 3.0 \ n'
+            +  'FN: Senpai maid Admin \ n' 
             +  'ORG: Pengembang XBot; \ n' 
             +  'TEL; tipo = CELDA; tipo = VOZ; waid = 593995743368: +593995743368 \ n' 
             +  'FIN: VCARD' 
