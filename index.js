@@ -1,4 +1,4 @@
-constante
+const
 {
    WAConexión ,
    MessageType ,
