@@ -31,8 +31,8 @@ const  nsfw  =  JSON . analizar ( fs . readFileSync ( './src/nsfw.json' ) )
 const  exclusivo  =  JSON . analizar ( fs . readFileSync ( './src/exclusive.json' ) )
 const  samih  =  JSON . analizar ( fs . readFileSync ( './src/simi.json' ) )
 const  vcard  =  'COMIENZO: VCARD \ n' 
-            +  'VERSIÓN: 3.0 \ n'
-            +  'FN: Senpai maid Admin \ n' 
+            +  'VERSIÓN: 3.0 \ n' 
+            +  'FN: Senpai Admin \ n' 
             +  'ORG: Pengembang XBot; \ n' 
             +  'TEL; tipo = CELDA; tipo = VOZ; waid = 593995743368: +593995743368 \ n' 
             +  'FIN: VCARD' 
@@ -136,7 +136,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 		prueba  {
 			si  ( ! mek . mensaje )  volver
 			if  ( mek . key  &&  mek . key . remoteJid  ==  'status @ broadcast' )  volver
-			if  ( mek . key . fromMe )  return
+			si  ( mek . key . fromMe )  volver
 			global . prefijo
 			global . obstruido
 			 contenido  constante =  JSON . stringify ( mek . mensaje )
@@ -267,7 +267,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 				caso  'información' :
 					yo  =  cliente . usuario
 					uptime  =  proceso . tiempo de actividad ( )
-					teks  =  `* Nombre del bot *: $ { me . nombre } \ n * PROPIETARIO *: * Senpai Maid~ * \ n * AUTOR *: AMPIBI \ n * Nombre del bot *: @ $ { me . jid . split ( '@' ) [ 0 ] } \ n * Prefijo *: $ { prefix } \ n * Total de contactos bloqueados *: $ { bloqueados . length } \ n * EL ESTA ACTIVO DESDE HACE *: $ { kyun ( tiempo de actividad ) } `
+					teks  =  `* Nombre del bot *: $ { me . nombre } \ n * PROPIETARIO *: * Senpai miad * \ n * AUTOR *: AMPIBI \ n * Nombre del bot *: @ $ { me . jid . split ( '@' ) [ 0 ] } \ n * Prefijo *: $ { prefix } \ n * Total de contactos bloqueados *: $ { bloqueados . length } \ n * EL ESTA ACTIVO DESDE HACE *: $ { kyun ( tiempo de actividad ) } `
 					buffer  =  aguardar  getBuffer ( me . imgUrl )
 					cliente . sendMessage ( desde ,  búfer ,  imagen ,  { título : teks ,  contextInfo : { mencionadoJid : [ me . jid ] } } )
 					descanso
@@ -370,7 +370,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 					if  ( ! isNsfw )  return  responder ( 'NSFW no está activo' )
 					Anu  =  Await  fetchJson ( `https:? //tobz-api.herokuapp.com/api/nsfwblowjob apikey = BotWeA` ,  { método : 'conseguir' } )
 					imgt  =  ( resultado anu . )
-					pok  =  espera  getBuffer ( imgt )
+					pok  =  aguardar  getBuffer ( imgt )
 					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
 					descanso
 
@@ -378,7 +378,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 					if  ( ! isNsfw )  return  responder ( 'NSFW no está activo' )
 					anu  =  await  fetchJson ( `https: // nekos.life / api / v2 / img / erok` ,  { método : 'conseguir' } )
 					imgt  =  ( anu . url )
-					pok  =  espera  getBuffer ( imgt )
+					pok  =  aguardar  getBuffer ( imgt )
 					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
 					descanso	  
 
@@ -386,7 +386,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 					if  ( ! isNsfw )  return  responder ( 'NSFW no está activo' )
 					anu  =  await  fetchJson ( `https: // nekos.life / api / v2 / img / boobs` ,  { método : 'conseguir' } )
 					imgt  =  ( anu . url )
-					pok  =  espera  getBuffer ( imgt )
+					pok  =  aguardar  getBuffer ( imgt )
 					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
 					descanso	  
 					
@@ -394,7 +394,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 					if  ( ! isNsfw )  return  responder ( 'NSFW no está activo' )
 					anu  =  await  fetchJson ( `https: // nekos.life / api / v2 / img / yuri` ,  { método : 'conseguir' } )
 					imgt  =  ( anu . url )
-					pok  =  espera  getBuffer ( imgt )
+					pok  =  aguardar  getBuffer ( imgt )
 					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
 					descanso
 
@@ -402,7 +402,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 					if  ( ! isNsfw )  return  responder ( 'NSFW no está activo' )
 					anu  =  await  fetchJson ( `https: // nekos.life / api / v2 / img / futanari` ,  { método : 'conseguir' } )
 					imgt  =  ( anu . url )
-					pok  =  espera  getBuffer ( imgt )
+					pok  =  aguardar  getBuffer ( imgt )
 					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
 					descanso	
 
@@ -410,7 +410,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 					if  ( ! isNsfw )  return  responder ( 'NSFW no está activo' )
 					anu  =  await  fetchJson ( `https: // nekos.life / api / v2 / img / lewdkemo` ,  { método : 'conseguir' } )
 					imgt  =  ( anu . url )
-					pok  =  espera  getBuffer ( imgt )
+					pok  =  aguardar  getBuffer ( imgt )
 					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
 					descanso
 
@@ -434,7 +434,7 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
                     			teks  =  cuerpo . rebanada ( 11 )
                     			Anu  =  Await  fetchJson ( `https://arugaz.herokuapp.com/api/dewabatch?q= $ { teks } '  ,  { método : 'conseguir' } )
                     			thum  =  aguardar  getBuffer ( anu . pulgar )
-                    			cliente . sendMessage ( de ,  thum ,  image ,  { citado : mek ,  título : ` $ { anu . resultado } ` } )
+                    			cliente . sendMessage ( de ,  thum ,  imagen ,  { citado : mek ,  título : ` $ { anu . resultado } ` } )
                  			descanso
 					
 					
@@ -492,748 +492,748 @@ cliente . on ( 'grupo-participantes-actualización' ,  async  ( anu )  =>  {
 					descanso
 					
               		  	caso  'lirik' :
-                    			if (args.length < 1) return reply('donde esta el titulo de la cancion, tio')
-                    			teha = body.slice(7)
-                    			anu = await fetchJson(`https://arugaz.herokuapp.com/api/lirik?judul=${teha}` , {method: 'get'})
-                    			reply(anu.result)
-                			break
+                    			if  ( args . length  <  1 )  return  reply ( 'donde esta el titulo de la cancion, tio' )
+                    			teha  =  cuerpo . rebanada ( 7 )
+                    			Anu  =  Await  fetchJson ( `https://arugaz.herokuapp.com/api/lirik?judul= $ { teha } '  ,  { método : 'conseguir' } )
+                    			respuesta ( resultado anu . )
+                			descanso
 					
-                		case 'pokemon':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=pokemon`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+                		caso  'pokemon' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = pokemon` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 					
-				case 'meme':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=meme`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+				caso  'meme' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = meme` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 				
-				case 'cars':
-				    	anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=cars`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+				caso  'coches' :
+				    	Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = cars` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 					
-				case 'bocchi':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=bocchi`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+				caso  'bocchi' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = bocchi` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 		
-				case 'animegirl':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime%20girl`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+				caso  'animegirl' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = animado 20girl`% ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 
-				case 'animeimg':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+				caso  'animeimg' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = anime` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 
-				case 'loli':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=loli`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+				caso  'loli' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = loli` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 
-                		case 'dogs':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anjing`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+                		caso  'perros' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = anjing` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 					
-				case 'neko':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=neko`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+				caso  'neko' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = neko` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 
-				case 'icon':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=icon%20anime`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+				caso  'icono' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = icono% 20anime` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 		
-			   	case 'gato':
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=gato`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
-					break
+			   	caso  'gato' :
+					Anu  =  Await  fetchJson ( `https:? //api.fdci.se/rep.php Gambar = gato` ,  { método : 'conseguir' } )
+					responder ( desorden . espera )
+					var  n  =  JSON . analizar ( JSON . stringify ( anu ) ) ;
+					var  nimek  =   n [ Math . piso ( Matemáticas . aleatorio ( ) * n . longitud ) ] ;
+					pok  =  aguardar  getBuffer ( nimek )
+					cliente . sendMessage ( de ,  pok ,  imagen ,  {  citado : mek  } )
+					descanso
 					
-                		case 'spamcall':
-                   			if (args.length < 1) return ('ingrese el número de destino')
-                   			weha = body.slice(10)
-                   			anu = await fetchJson(`https://arugaz.herokuapp.com/api/spamcall?no=${weha}` , {method: 'get'})
-                   			client.sendMessage(from, anu.logs, text, {quoted: mek})
-                 			break
+                		caso  'spamcall' :
+                   			if  ( args . length  <  1 )  return  ( 'ingrese el número de destino' )
+                   			weha  =  cuerpo . rebanada ( 10 )
+                   			Anu  =  Await  fetchJson ( `https://arugaz.herokuapp.com/api/spamcall?no= $ { Weha } '  ,  { método : 'conseguir' } )
+                   			cliente . sendMessage ( de ,  anu . registros ,  texto ,  { citado : mek } )
+                 			descanso
 					
-                		case 'indohot':
-                   			if (!isNsfw) return reply('NSFW no está activo')
-                   			anu = await fetchJson(`https://arugaz.herokuapp.com/api/indohot`, {method: 'get'})
-                   			if (anu.error) return reply(anu.error)
-                   			hasil = `*judul* \n${anu.result.judul} *genre* \n${anu.result.genre} *durasi* \n${anu.result.durasi} *url* \n${anu.result.url}`
-                   			client.sendMessage(from, hasil, text, {quoted: mek})
-                   			break
+                		caso  'indohot' :
+                   			if  ( ! isNsfw )  return  responder ( 'NSFW no está activo' )
+                   			anu  =  await  fetchJson ( `https: // arugaz.herokuapp.com / api / indohot` ,  { método : 'conseguir' } )
+                   			if  ( anu . error )  devolver  respuesta ( anu . error )
+                   			hasil  =  `* judul * \ n $ { anu . resultado . judul } * género * \ n $ { anu . resultado . género } * durasi * \ n $ { anu . resultado . durasi } * url * \ n $ { anu . resultado . url } `
+                   			cliente . sendMessage ( de ,  hasil ,  texto ,  { citado : mek } )
+                   			descanso
 					
-				case 'ytmp4':
-					if (args.length < 1) return reply('¿Dónde está la URL?')
-					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = `*Title* : ${anu.title}`
-					thumb = await getBuffer(anu.thumb)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
-					break
+				caso  'ytmp4' :
+					if  ( args . length  <  1 )  return  reply ( '¿Dónde está la URL?' )
+					si ( ! isUrl ( args [ 0 ] )  && ! args [ 0 ] . Incluye ( 'youtu' ) )  de retorno  respuesta ( desorden . error . Iv )
+					Anu  =  Await  fetchJson ( `https://st4rz.herokuapp.com/api/ytv2?url= $ { args [ 0 ] } ' ,  { método : 'conseguir' } )
+					if  ( anu . error )  devolver  respuesta ( anu . error )
+					teks  =  `* Título *: $ { anu . título } `
+					pulgar  =  esperar  getBuffer ( anu . pulgar )
+					cliente . sendMessage ( de ,  pulgar ,  imagen ,  { citado : mek ,  título : teks } )
+					tampón  =  await  GetBuffer ( anu . resultado )
+					cliente . sendMessage ( de ,  búfer ,  video ,  { mimetype : 'video / mp4' ,  nombre de archivo : ` $ { anu . title } .mp4` , entre  comillas : mek } )
+					descanso
 					
-				case 'ytmp3':
-					if (args.length < 1) return reply('¿Dónde está la URL?')
-					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = `*Title* : ${anu.title}`
-					thumb = await getBuffer(anu.thumb)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
-					break
+				caso  'ytmp3' :
+					if  ( args . length  <  1 )  return  reply ( '¿Dónde está la URL?' )
+					si ( ! isUrl ( args [ 0 ] )  && ! args [ 0 ] . Incluye ( 'youtu' ) )  de retorno  respuesta ( desorden . error . Iv )
+					Anu  =  Await  fetchJson ( `https://st4rz.herokuapp.com/api/ytv2?url= $ { args [ 0 ] } ' ,  { método : 'conseguir' } )
+					if  ( anu . error )  devolver  respuesta ( anu . error )
+					teks  =  `* Título *: $ { anu . título } `
+					pulgar  =  esperar  getBuffer ( anu . pulgar )
+					cliente . sendMessage ( de ,  pulgar ,  imagen ,  { citado : mek ,  título : teks } )
+					tampón  =  await  GetBuffer ( anu . resultado )
+					cliente . sendMessage ( desde ,  búfer ,  audio ,  { mimetype : 'audio / mp4' ,  nombre de archivo : ` $ { anu . title } .mp3` , entre  comillas : mek } )
+					descanso
 					
-				case 'happymod':
-					if (args.length < 1) return reply('¿que aplicacion desea buscar?')
-				  	data = await fetchJson(`https://tobz-api.herokuapp.com/api/happymod?q=${body.slice(10)}&apikey=BotWeA`, {method: 'get'})
-				  	hupo = data.result[0] 
-				  	teks = `*➸ Nombre*: ${data.result[0].title}\n\n*➸ Version*: ${hupo.version}\n\n*➸ Peso:* ${hupo.size}\n\n*➸ root*: ${hupo.root}\n\n*➸ Precio*: ${hupo.price}\n\n*➸ Link*: ${hupo.link}\n\n*➸ Descarga*: ${hupo.download}`
-				  	buffer = await getBuffer(hupo.image)
-				  	client.sendMessage(from, buffer, image, {quoted: mek, caption: `${teks}`})
-				  	break
+				caso  'happymod' :
+					if  ( args . length  <  1 )  return  reply ( '¿que aplicacion desea buscar?' )
+				  	datos  =  Await  fetchJson ( `https://tobz-api.herokuapp.com/api/happymod?q= $ { cuerpo . rebanada ( 10 ) } y apikey = BotWeA` ,  { método : 'conseguir' } )
+				  	hupo  =  datos . resultado [ 0 ] 
+				  	teks  =  `* ➸ Nombre *: $ { data . resultado [ 0 ] . title } \ n \ n * ➸ Versión *: $ { hupo . versión } \ n \ n * ➸ Peso: * $ { hupo . tamaño } \ n \ n * ➸ raíz *: $ { hupo . root } \ n \ n * ➸ Precio *: $ { hupo . precio } \ n \ n * ➸ Enlace *: $ { hupo . enlace } \ n \ n * ➸ Descarga *: $ { hupo . descargar }'
+				  	buffer  =  aguardar  getBuffer ( imagen hupo . )
+				  	cliente . sendMessage ( desde ,  búfer ,  imagen ,  { citado : mek ,  título : ` $ { teks } ` } )
+				  	descanso
 					
-                		case 'text3d':
-              	    			if (args.length < 1) return reply('¿Dónde está el texto sis?')
-                    			teks = `${body.slice(8)}`
-                    			if (teks.length > 10) return client.sendMessage(from, 'El texto es largo, un máximo de 10 frases', text, {quoted: mek})
-                    			buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
-                    			client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
-			     		break
+                		caso  'text3d' :
+              	    			if  ( args . length  <  1 )  return  reply ( '¿Dónde está el texto sis?' )
+                    			teks  =  ` $ { cuerpo . rebanada ( 8 ) } `
+                    			si  ( teks . longitud  >  10 )  devuelve el  cliente . sendMessage ( de ,  'El texto es largo, un máximo de 10 frases' ,  texto ,  { citado : mek } )
+                    			buff  =  Await  GetBuffer ( `https://docs-jojo.herokuapp.com/api/text3d?text= $ { teks } ' ,  { método : 'conseguir' } )
+                    			cliente . sendMessage ( de ,  buff ,  imagen ,  { citado : mek ,  título : ` $ { teks } ` } )
+			     		descanso
 					
-			    	case 'fototiktok':
-                    			gatauda = body.slice(12)
-                    			anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktokpp?user=${gatauda}`)
-			        	buff = await getBuffer(anu.result)
-                    			reply(anu.result)
-			        	break
+			    	caso  'fototiktok' :
+                    			gatauda  =  cuerpo . rebanada ( 12 )
+                    			Anu  =  Await  fetchJson ( `https://docs-jojo.herokuapp.com/api/tiktokpp?user= $ { gatauda } ' )
+			        	buff  =  await  GetBuffer ( anu . resultado )
+                    			respuesta ( resultado anu . )
+			        	descanso
 					
-			    	case 'map':
-                			anu = await fetchJson(`https://mnazria.herokuapp.com/api/maps?search=${body.slice(5)}`, {method: 'get'})
-                			buffer = await getBuffer(anu.gambar)
-                			client.sendMessage(from, buffer, image, {quoted: mek, caption: `${body.slice(5)}`})
-					break
-               	 		case 'kbbi':
-					if (args.length < 1) return reply('¿Qué quieres buscar?')
-					anu = await fetchJson(`https://mnazria.herokuapp.com/api/kbbi?search=${body.slice(6)}`, {method: 'get'})
-					reply('Menurut Kbbi:\n\n'+anu.result)
-					break
+			    	caso  'mapa' :
+                			Anu  =  Await  fetchJson ( `https://mnazria.herokuapp.com/api/maps?search= $ { cuerpo . rebanada ( 5 ) } ` ,  { método : 'conseguir' } )
+                			buffer  =  esperar  getBuffer ( anu . gambar )
+                			cliente . sendMessage ( desde ,  búfer ,  imagen ,  { citado : mek ,  título : ` $ { cuerpo . segmento ( 5 ) } ` } )
+					descanso
+               	 		caso  'kbbi' :
+					if  ( args . length  <  1 )  return  reply ( '¿Qué quieres buscar?' )
+					Anu  =  Await  fetchJson ( `https://mnazria.herokuapp.com/api/kbbi?search= $ { cuerpo . rebanada ( 6 ) } ` ,  { método : 'conseguir' } )
+					responder ( 'Menurut Kbbi: \ n \ n' + resultado anu . )
+					descanso
 					
-                		case 'artinama':
-					if (args.length < 1) return reply('¿Qué quieres buscar?')
-					anu = await fetchJson(`https://mnazria.herokuapp.com/api/arti?nama=${body.slice(10)}`, {method: 'get'})
-					reply('Menurut nama:\n\n'+anu.result)
-					break
+                		caso  'artinama' :
+					if  ( args . length  <  1 )  return  reply ( '¿Qué quieres buscar?' )
+					Anu  =  Await  fetchJson ( `https://mnazria.herokuapp.com/api/arti?nama= $ { cuerpo . rebanada ( 10 ) } ` ,  { método : 'conseguir' } )
+					responder ( 'Menurut nama: \ n \ n' + resultado anu . )
+					descanso
 					
-				case 'ocr': 
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await client.downloadAndSaveMediaMessage(encmedia)
-						reply(mess.wait)
-						await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3})
-							.then(teks => {
-								reply(teks.trim())
-								fs.unlinkSync(media)
-							})
-							.catch(err => {
-								reply(err.message)
-								fs.unlinkSync(media)
-							})
-					} else {
-						reply('𝐄𝐍𝐕𝐈𝐀𝐑 𝐅𝐎𝐓𝐎𝐒 𝐂𝐎𝐍 𝐓𝐈́𝐓𝐔𝐋𝐎 ${prefix}𝗼𝗰𝗿')
+				caso  'ocr' :
+					if  ( ( isMedia  && ! mek . message . videoMessage  ||  isQuotedImage )  &&  args . length  ==  0 )  {
+						const  encmedia  =  isQuotedImage ? JSON . parse ( JSON . stringify ( mek ) . replace ( 'quotedM' , 'm' ) ) . mensaje . extendedTextMessage . contextInfo : mek
+						const  media  =  aguardar al  cliente . downloadAndSaveMediaMessage ( encmedia )
+						responder ( desorden . espera )
+						aguardar  reconocimiento ( medios ,  { lang : 'eng + ind' ,  oem : 1 ,  psm : 3 } )
+							. entonces ( teks  =>  {
+								responder ( teks . trim ( ) )
+								fs . unlinkSync ( medios )
+							} )
+							. catch ( err  =>  {
+								responder ( err . mensaje )
+								fs . unlinkSync ( medios )
+							} )
+					}  más  {
+						responder ( '𝐄𝐍𝐕𝐈𝐀𝐑 𝐅𝐎𝐓𝐎𝐒 𝐂𝐎𝐍 𝐓𝐈́𝐓𝐔𝐋𝐎 $ {prefijo} 𝗼𝗰𝗿' )
 					}
-					break
-				case 'stiker': 
-				case 'sticker':
-				case 's':
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await client.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						await ffmpeg(`./${media}`)
-							.input(media)
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								reply(mess.error.stick)
-							})
-							.on('end', function () {
-								console.log('Finish')
-								buff = fs.readFileSync(ran)
-								client.sendMessage(from, buff, sticker, {quoted: mek})
-								fs.unlinkSync(media)
-								fs.unlinkSync(ran)
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-					} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
-						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await client.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						reply(mess.wait)
-						await ffmpeg(`./${media}`)
-							.inputFormat(media.split('.')[1])
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`Yah gagal ;(, coba ulangi ^_^`)
-							})
-							.on('end', function () {
-								console.log('Finish')
-								buff = fs.readFileSync(ran)
-								client.sendMessage(from, buff, sticker, {quoted: mek})
-								fs.unlinkSync(media)
-								fs.unlinkSync(ran)
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-							} else {
-						reply(`Enviar fotos con subtítulos ${prefix}sticker o respuesta / etiqueta de imagen`)
+					descanso
+				caso  'stiker' :
+				caso  'pegatina' :
+				caso  's' :
+					if  ( ( isMedia  && ! mek . message . videoMessage  ||  isQuotedImage )  &&  args . length  ==  0 )  {
+						const  encmedia  =  isQuotedImage ? JSON . parse ( JSON . stringify ( mek ) . replace ( 'quotedM' , 'm' ) ) . mensaje . extendedTextMessage . contextInfo : mek
+						const  media  =  aguardar al  cliente . downloadAndSaveMediaMessage ( encmedia )
+						corrió  =  getRandom ( '.webp' )
+						aguardar  ffmpeg ( `./ $ { media } ` )
+							. entrada ( medios )
+							. on ( 'inicio' ,  función  ( cmd )  {
+								consola . log ( `Iniciado: $ { cmd } ` )
+							} )
+							. on ( 'error' ,  function  ( err )  {
+								consola . log ( `Error: $ { err } ` )
+								fs . unlinkSync ( medios )
+								responder ( desorden . error . stick )
+							} )
+							. en ( 'fin' ,  función  ( )  {
+								consola . log ( 'Finalizar' )
+								buff  =  fs . readFileSync ( ejecutado )
+								cliente . sendMessage ( de ,  buff ,  sticker ,  { citado : mek } )
+								fs . unlinkSync ( medios )
+								fs . unlinkSync ( ejecutado )
+							} )
+							. addOutputOptions ( [ `-vcodec` , ` libwebp` , `-vf` , ` scale = 'min (320, iw)': min '(320, ih)': force_original_aspect_ratio = disminución, fps = 15, pad = 320: 320: -1: -1: color=white@0.0, split [a] [b]; [a] palettegen = reserve_transparent = on: transparencia_color = ffffff [p]; [b] [p] paletteuse` ] )
+							. toFormat ( 'webp' )
+							. salvar ( correr )
+					}  else  if  ( ( isMedia  &&  mek . message . videoMessage . seconds  <  11  ||  isQuotedVideo  &&  mek . message . extendedTextMessage . contextInfo . quotedMessage . videoMessage . seconds  <  11 )  &&  args . length  ==  0 )  {
+						const  encmedia  =  isQuotedVideo ? JSON . parse ( JSON . stringify ( mek ) . replace ( 'quotedM' , 'm' ) ) . mensaje . extendedTextMessage . contextInfo : mek
+						const  media  =  aguardar al  cliente . downloadAndSaveMediaMessage ( encmedia )
+						corrió  =  getRandom ( '.webp' )
+						responder ( desorden . espera )
+						aguardar  ffmpeg ( `./ $ { media } ` )
+							. inputFormat ( media . split ( '.' ) [ 1 ] )
+							. on ( 'inicio' ,  función  ( cmd )  {
+								consola . log ( `Iniciado: $ { cmd } ` )
+							} )
+							. on ( 'error' ,  function  ( err )  {
+								consola . log ( `Error: $ { err } ` )
+								fs . unlinkSync ( medios )
+								tipe  =  media . endsWith ( '.mp4' ) ? 'video' : 'gif'
+								responder ( `Yah gagal; (, coba ulangi ^ _ ^` )
+							} )
+							. en ( 'fin' ,  función  ( )  {
+								consola . log ( 'Finalizar' )
+								buff  =  fs . readFileSync ( ejecutado )
+								cliente . sendMessage ( de ,  buff ,  sticker ,  { citado : mek } )
+								fs . unlinkSync ( medios )
+								fs . unlinkSync ( ejecutado )
+							} )
+							. addOutputOptions ( [ `-vcodec` , ` libwebp` , `-vf` , ` scale = 'min (320, iw)': min '(320, ih)': force_original_aspect_ratio = disminución, fps = 15, pad = 320: 320: -1: -1: color=white@0.0, split [a] [b]; [a] palettegen = reserve_transparent = on: transparencia_color = ffffff [p]; [b] [p] paletteuse` ] )
+							. toFormat ( 'webp' )
+							. salvar ( correr )
+							}  más  {
+						responder ( `Enviar fotos con subtítulos $ { prefix } sticker o respuesta / etiqueta de imagen` )
 					}
-					break
-				case 'getses':
-            				if (!isOwner) return reply(mess.only.ownerB)
-           			 	const sesPic = await client.getSnapshot()
-            				client.sendFile(from, sesPic, 'session.png', '>~<...', id)
-            				break
+					descanso
+				caso  'obtiene' :
+            				si  ( ! isOwner )  de retorno  respuesta ( desorden . solamente . ownerB )
+           			 	const  sesPic  =  esperar al  cliente . getSnapshot ( )
+            				cliente . sendFile ( desde ,  sesPic ,  ' session.png ' ,  '> ~ <...' ,  id )
+            				descanso
 					
-				case 'gtts':	
-				case 'tts':
-					if (args.length < 1) return client.sendMessage(from, 'Código de idioma requerido !!', text, {quoted: mek})
-					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return client.sendMessage(from, '¿Qué texto estás haciendo voz? es mi voz :v?', text, {quoted: mek})
-					dtt = body.slice(9)
-					ranm = getRandom('.mp3')
-					rano = getRandom('.ogg')
-					dtt.length > 300
-					? reply('El texto significa....')
-					: gtts.save(ranm, dtt, function() {
-						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
-							fs.unlinkSync(ranm)
-							buff = fs.readFileSync(rano)
-							if (err) return reply('Bueno, falló ;( , intenta repetir :v')
-							client.sendMessage(from, buff, audio, {quoted: mek, ptt:true})
-							fs.unlinkSync(rano)
-						})
-					})
-					break
+				caso  'gtts' :	
+				caso  'tts' :
+					if  ( args . length  <  1 )  devuelve el  cliente . sendMessage ( de ,  'Código de idioma requerido !!' ,  texto ,  { citado : mek } )
+					const  gtts  =  require ( './lib/gtts' ) ( args [ 0 ] )
+					if  ( args . length  <  2 )  devuelve el  cliente . sendMessage ( de ,  '¿Qué texto estás haciendo voz? es mi voz: v?' ,  text ,  { quoted : mek } )
+					dtt  =  cuerpo . rebanada ( 9 )
+					ranm  =  getRandom ( '.mp3' )
+					rano  =  getRandom ( '.ogg' )
+					tdt . longitud  >  300
+					? responder ( 'El texto significa ....' )
+					: gtts . Guardar ( RANM ,  tdt ,  la función ( )  {
+						exec ( `ffmpeg -i $ { ranm } -ar 48000 -vn -c: a libopus $ { rano } ` ,  ( err )  =>  {
+							fs . unlinkSync ( ranm )
+							buff  =  fs . readFileSync ( rano )
+							if  ( err )  return  reply ( 'Bueno, falló; (, intenta repetir: v' )
+							cliente . sendMessage ( de ,  buff ,  audio ,  { citado : mek ,  ptt : true } )
+							fs . unlinkSync ( rano )
+						} )
+					} )
+					descanso
 					
-				case 'setprefix':
-					if (args.length < 1) return
-					if (!isOwner) return reply(mess.only.ownerB)
-					prefix = args[0]
-					reply(`𝗣𝗿𝗲𝗳𝗶𝘅 𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗱𝗶 𝘂𝗯𝗮𝗵 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 : ${prefix}`)
-					break 
+				caso  'setprefix' :
+					if  ( args . length  <  1 )  return
+					si  ( ! isOwner )  de retorno  respuesta ( desorden . solamente . ownerB )
+					prefijo  =  argumentos [ 0 ]
+					responder ( `𝗣𝗿𝗲𝗳𝗶𝘅 𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗱𝗶 𝘂𝗯𝗮𝗵 𝗺𝗲𝗻𝗷𝗮𝗱𝗶: $ { prefijo } ` )
+					descanso 
 					
-				case 'hilih': 
-					if (args.length < 1) return reply('dame el texto!! >:v')
-					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/hilih?teks=${body.slice(7)}`, {method: 'get'})
-					reply(anu.result)
-					break
+				caso  'hilih' :
+					if  ( args . length  <  1 )  return  responder ( 'dame el texto !!>: v' )
+					Anu  =  Await  fetchJson ( `https://mhankbarbars.herokuapp.com/api/hilih?teks= $ { cuerpo . rebanada ( 7 ) } ` ,  { método : 'conseguir' } )
+					respuesta ( resultado anu . )
+					descanso
 					
-				case 'tiktokstalk':
-					try {
-						if (args.length < 1) return client.sendMessage(from, '𝗤𝗨𝗘 𝗡𝗢𝗠𝗕𝗥𝗘 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 ?', text, {quoted: mek})
-						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
-						reply(mess.wait)
-						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
-						buffer = await getBuffer(user.avatarLarger)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('[𝗘𝗥𝗥𝗢𝗥] 𝗣𝗢𝗦𝗜𝗕𝗟𝗘𝗠𝗘𝗡𝗧𝗘 𝗡𝗢𝗠𝗕𝗥𝗘 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 𝗡𝗢 𝗩𝗔́𝗟𝗜𝗗𝗢')
+				caso  'tiktokstalk' :
+					prueba  {
+						if  ( args . length  <  1 )  devuelve el  cliente . sendMessage ( de ,  '𝗤𝗨𝗘 𝗡𝗢𝗠𝗕𝗥𝗘 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢?' ,  texto ,  { citado : mek } )
+						deje  { usuario , estadísticas }  =  aguardar  tiktod . getUserProfileInfo ( args [ 0 ] )
+						responder ( desorden . espera )
+						teks  =  `* ID *: $ { usuario . id } \ n * Nombre de usuario *: $ { user . UniqueId } \ n * Apodo *: $ { usuario . apodo } \ n * Seguidores *: $ { stats . followerCount } \ n * Seguimientos *: $ { stats . followingCount } \ n * Publicaciones *: $ { stats . videoCount } \ n * Luv *: $ { stats . corazón } \ n`
+						buffer  =  aguardar  getBuffer ( usuario . avatarLarger )
+						cliente . sendMessage ( de ,  búfer ,  imagen ,  {entre comillas : mek ,  título : teks } )
+					}  captura  ( e )  {
+						consola . log ( `Error:` ,  color ( e , 'rojo' ) )
+						responder ( '[𝗘𝗥𝗥𝗢𝗥] 𝗣𝗢𝗦𝗜𝗕𝗟𝗘𝗠𝗘𝗡𝗧𝗘 𝗡𝗢𝗠𝗕𝗥𝗘 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 𝗡𝗢 𝗩𝗔́𝗟𝗜𝗗𝗢' )
 					}
-					break
+					descanso
 					
-				case 'fitnah':	
-				case 'fake':          
-               				if (!isGroup) return reply(mess.only.group)
-                			arg = body.substring(body.indexOf(' ') + 1)
-					isi = arg.split(' |')[0] 
-					pesan = arg.split('|')[1] 
-					pesan2 = arg.split('|')[2] 
-                			reply(pesan, isi, pesan2)
-                			break
+				caso  'fitnah' :	
+				caso  'falso' :          
+               				si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+                			arg  =  cuerpo . subcadena ( cuerpo . indexOf ( '' )  +  1 )
+					isi  =  arg . split ( '|' ) [ 0 ] 
+					pesan  =  arg . split ( '|' ) [ 1 ] 
+					pesan2  =  arg . split ( '|' ) [ 2 ] 
+                			responder ( pesan ,  isi ,  pesan2 )
+                			descanso
 					
-                 		case 'linkgc':
-				    	if (!isGroup) return reply(mess.only.group)
-				    	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-				    	linkgc = await client.groupInviteCode (from)
-				    	yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
-				    	client.sendMessage(from, yeh, text, {quoted: mek})
-			        	break
+                 		caso  'linkgc' :
+				    	si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+				    	si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+				    	linkgc  =  aguardar  cliente . groupInviteCode  ( desde )
+				    	yeh  =  `https://chat.whatsapp.com/ $ { linkgc } \ n \ nlink Grupo * $ { groupName } *`
+				    	cliente . sendMessage ( de ,  yeh ,  texto ,  { citado : mek } )
+			        	descanso
 					
-				case 'tagall':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					members_id = []
-					teks = (args.length > 1) ? body.slice(8).trim() : ''
-					teks += '\n\n'
-					for (let mem of groupMembers) {
-						teks += `┣➥ @${mem.jid.split('@')[0]}\n`
-						members_id.push(mem.jid)
+				caso  'tagall' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					miembros_id  =  [ ]
+					teks  =  ( args . longitud  >  1 ) ? cuerpo . rebanada ( 8 ) . recortar ( ) : ''
+					teks  + =  '\ n \ n'
+					para  ( deje  mem  of  groupMembers )  {
+						teks  + =  `┣➥ @ $ { mem . jid . dividir ( '@' ) [ 0 ] } \ n`
+						miembros_id . empujar ( mem . jid )
 					}
-					mentions(teks, members_id, true)
-					break
+					menciones ( teks ,  members_id ,  true )
+					descanso
 					
-				case 'clearall':
-					if (!isOwner) return reply(' *YO SOY QUIEN* ?')
-					anu = await client.chats.all()
-					client.setMaxListeners(25)
-					for (let _ of anu) {
-						client.deleteChat(_.jid)
+				caso  'clear' :
+					if  ( ! isOwner )  return  responder ( '* YO SOY QUIEN *?' )
+					anu  =  esperar al  cliente . chats . todo ( )
+					cliente . setMaxListeners ( 25 )
+					para  ( sea  _  de  anu )  {
+						cliente . deleteChat ( _ . jid )
 					}
-					reply('𝗕𝗢𝗥𝗥𝗔𝗥 𝗧𝗢𝗗𝗢 𝗘𝗟 𝗘́𝗫𝗜𝗧𝗢 𝗗𝗘 𝗬𝗔𝗛  :)')
-					break
+					responder ( '𝗕𝗢𝗥𝗥𝗔𝗥 𝗧𝗢𝗗𝗢 𝗘𝗟 𝗘́𝗫𝗜𝗧𝗢 𝗗𝗘 𝗬𝗔𝗛 :)' )
+					descanso
 					
-			       case 'block':
-				 	client.updatePresence(from, Presence.composing) 
-				 	client.chatRead (from)
-					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply(mess.only.ownerB)
-					client.blockUser (`${body.slice(7)}@c.us`, "add")
-					client.sendMessage(from, `perintah Diterima, memblokir ${body.slice(7)}@c.us`, text)
-					break
+			       caso  'bloque' :
+				 	cliente . updatePresence ( desde ,  Presence . componiendo ) 
+				 	cliente . chatRead  ( de )
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isOwner )  de retorno  respuesta ( desorden . solamente . ownerB )
+					cliente . blockUser  ( ` $ { body . slice ( 7 ) } @ c.us` ,  " agregar " )
+					cliente . sendMessage ( de ,  `perintah Diterima, memblokir $ { body . slice ( 7 ) } @ c.us` ,  text )
+					descanso
 					
-                    		case 'unblock':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply(mess.only.ownerB)
-				    	client.blockUser (`${body.slice(9)}@c.us`, "remove")
-					client.sendMessage(from, `𝗽𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝗗𝗶𝘁𝗲𝗿𝗶𝗺𝗮, 𝗺𝗲𝗺𝗯𝘂𝗸𝗮 ${body.slice(9)}@c.us`, text)
-					break
+                    		caso  'desbloquear' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isOwner )  de retorno  respuesta ( desorden . solamente . ownerB )
+				    	cliente . blockUser  ( ` $ { body . slice ( 9 ) } @ c.us` ,  " eliminar " )
+					cliente . sendMessage ( from ,  `𝗽𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝗗𝗶𝘁𝗲𝗿𝗶𝗺𝗮, 𝗺𝗲𝗺𝗯𝘂𝗸𝗮 $ { body . slice ( 9 ) } @ c.us` ,  text )
+					descanso
 					
-				case 'leave': 
-					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply(mess.only.ownerB)
-					await client.leaveGroup(from, '𝗕𝘆𝗲𝗲', groupId)
-                    			break
+				caso  'dejar' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isOwner )  de retorno  respuesta ( desorden . solamente . ownerB )
+					esperar al  cliente . LeaveGroup ( desde ,  '𝗕𝘆𝗲𝗲' ,  groupId )
+                    			descanso
 					
-				case 'bc': 
-					if (!isOwner) return reply(' *YO SOY QUIEN* ?') 
-					if (args.length < 1) return reply('.......')
-					anu = await client.chats.all()
-					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						buff = await client.downloadMediaMessage(encmedia)
-						for (let _ of anu) {
-							client.sendMessage(_.jid, buff, image, {caption: `❮ 𝙋𝙀𝙎𝘼𝙉 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`})
+				caso  'bc' :
+					if  ( ! isOwner )  return  responder ( '* YO SOY QUIEN *?' ) 
+					if  ( args . length  <  1 )  return  respuesta ( '.......' )
+					anu  =  esperar al  cliente . chats . todo ( )
+					if  ( isMedia  && ! mek . message . videoMessage  ||  isQuotedImage )  {
+						const  encmedia  =  isQuotedImage ? JSON . parse ( JSON . stringify ( mek ) . replace ( 'quotedM' , 'm' ) ) . mensaje . extendedTextMessage . contextInfo : mek
+						buff  =  esperar al  cliente . downloadMediaMessage ( encmedia )
+						para  ( sea  _  de  anu )  {
+							cliente . sendMessage ( _ . jid ,  buff ,  image ,  { caption : `❮ 𝙋𝙀𝙎𝘼𝙉 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯ \ n \ n $ { body . slice ( 4 ) } ` } )
 						}
-						reply('𝘿𝙄𝙁𝙐𝙎𝙄𝙊́𝙉 𝘿𝙀 𝙀́𝙓𝙄𝙏𝙊𝙎 ')
-					} else {
-						for (let _ of anu) {
-							sendMess(_.jid, `❮ 𝙋𝙀𝙎𝘼𝙉 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`)
+						responder ( '𝘿𝙄𝙁𝙐𝙎𝙄𝙊́𝙉 𝘿𝙀 𝙀́𝙓𝙄𝙏𝙊𝙎' )
+					}  más  {
+						para  ( sea  _  de  anu )  {
+							sendMess ( _ . jid ,  `❮ 𝙋𝙀𝙎𝘼𝙉 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯ \ n \ n $ { cuerpo . rebanada ( 4 ) } ` )
 						}
-						reply('𝘿𝙄𝙁𝙐𝙎𝙄𝙊́𝙉 𝘿𝙀 𝙀́𝙓𝙄𝙏𝙊𝙎 ')
+						responder ( '𝘿𝙄𝙁𝙐𝙎𝙄𝙊́𝙉 𝘿𝙀 𝙀́𝙓𝙄𝙏𝙊𝙎' )
 					}
-					break
+					descanso
 					
-			   	case 'setpp': 
-                        		if (!isGroup) return reply(mess.only.group)
-                       			if (!isGroupAdmins) return reply(mess.only.admin)
-                        		if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-                       			media = await client.downloadAndSaveMediaMessage(mek)
-                         		await client.updateProfilePicture (from, media)
-                        		reply('𝗖𝗔𝗠𝗕𝗜𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗢 𝗗𝗘 𝗜𝗖𝗢𝗡𝗢 𝗗𝗘 𝗚𝗥𝗨𝗣𝗢')
-                			break
+			   	caso  'setpp' :
+                        		si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+                       			si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+                        		si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+                       			media  =  aguardar al  cliente . downloadAndSaveMediaMessage ( mek )
+                         		esperar al  cliente . updateProfilePicture  ( desde ,  media )
+                        		responder ( '𝗖𝗔𝗠𝗕𝗜𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗢 𝗗𝗘 𝗜𝗖𝗢𝗡𝗢 𝗗𝗘 𝗚𝗥𝗨𝗣𝗢' )
+                			descanso
 					
-				case 'add':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('¿Quieres agregar a alguien?')
-					if (args[0].startsWith('08')) return reply('Utilice el código de país, mas')
-					try {
-						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
-						client.groupAdd(from, [num])
-					} catch (e) {
-						console.log('Error :', e)
-						reply('No se pudo agregar el destino, tal vez porque es privado, F')
+				caso  'agregar' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+					if  ( args . length  <  1 )  return  reply ( '¿Quieres agregar a alguien?' )
+					if  ( args [ 0 ] . startsWith ( '08' ) )  return  reply ( 'Use el código de país, mas' )
+					prueba  {
+						num  =  ` $ { args [ 0 ] . reemplazar ( / / g ,  '' ) } @ s.whatsapp.net`
+						cliente . groupAdd ( de ,  [ núm ] )
+					}  captura  ( e )  {
+						consola . log ( 'Error:' ,  e )
+						responder ( 'No se pudo agregar el destino, tal vez porque es privado, F' )
 					}
-					break
+					descanso
 					
-				case 'grup':
-				case 'group':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args[0] === 'buka') {
-					    reply(`𝗕𝗲𝗿𝗵𝗮𝘀𝗶?? 𝗠𝗲𝗺𝗯𝘂𝗸𝗮 𝗚𝗿𝗼𝘂𝗽 𝗧𝗼𝗱`)
-						client.groupSettingChange(from, GroupSettingChange.messageSend, false)
-					} else if (args[0] === 'tutup') {
-						reply(`𝗕𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗠𝗲𝗻𝘂𝘁𝘂𝗽 𝗚𝗿𝗼𝘂𝗽 𝗧𝗼𝗱`)
-						client.groupSettingChange(from, GroupSettingChange.messageSend, true)
+				caso  'grup' :
+				caso  'grupo' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+					if  ( args [ 0 ]  ===  'buka' )  {
+					    responder ( `𝗕𝗲𝗿𝗵𝗮𝘀𝗶 ?? 𝗠𝗲𝗺𝗯𝘂𝗸𝗮 𝗚𝗿𝗼𝘂𝗽 𝗧𝗼𝗱` )
+						cliente . groupSettingChange ( de ,  GroupSettingChange . messageSend ,  falso )
+					}  else  if  ( args [ 0 ]  ===  'tutup' )  {
+						responder ( `𝗕𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗠𝗲𝗻𝘂𝘁𝘂𝗽 𝗚𝗿𝗼𝘂𝗽 𝗧𝗼𝗱` )
+						cliente . groupSettingChange ( de ,  GroupSettingChange . messageSend ,  verdadero )
 					}
-					break
+					descanso
                     
-            			case 'admin':
-            			case 'owner':
-            			case 'creator':
-                  			client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-       					client.sendMessage(from, 'Este es mi número de propietario >_<, no enviar spam ni bloquearlo',MessageType.text, { quoted: mek} )
-           				break
+            			caso  'admin' :
+            			caso  'propietario' :
+            			caso  'creador' :
+                  			cliente . sendMessage ( de ,  { displayname : "Jeff" ,  vcard : vcard } ,  MessageType . contact ,  {  quoted : mek } )
+       					cliente . sendMessage ( from ,  'Este es mi número de propietario> _ <, no enviar spam ni bloquearlo' , MessageType . text ,  {  quoted : mek }  )
+           				descanso
 					
-           			case 'setname':
-                			if (!isGroup) return reply(mess.only.group)
-			    		if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-                			client.groupUpdateSubject(from, `${body.slice(9)}`)
-                			client.sendMessage(from, 'Éxito, cambiar el nombre del grupo', text, {quoted: mek})
-                			break
+           			caso  'setname' :
+                			si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+			    		si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+                			cliente . groupUpdateSubject ( de ,  ` $ { body . slice ( 9 ) } ` )
+                			cliente . sendMessage ( de ,  'Éxito, cambiar el nombre del grupo' ,  texto ,  { citado : mek } )
+                			descanso
 					
-                		case 'setdesc':
-                			if (!isGroup) return reply(mess.only.group)
-			    		if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-                			client.groupUpdateDescription(from, `${body.slice(9)}`)
-                			client.sendMessage(from, 'Éxito, cambio de descripción del grupo', text, {quoted: mek})
-               	 			break
+                		caso  'setdesc' :
+                			si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+			    		si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+                			cliente . groupUpdateDescription ( desde ,  ` $ { body . slice ( 9 ) } ` )
+                			cliente . sendMessage ( de ,  'Éxito, cambio de descripción del grupo' ,  texto ,  { citado : mek } )
+               	 			descanso
 					
-           			case 'demote':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗔 𝗔𝗟 𝗢𝗕𝗝𝗘𝗧𝗜𝗩𝗢 𝗤𝗨𝗘 𝗤𝗨𝗜𝗘𝗥𝗘𝗦 𝗩𝗢𝗟𝗩𝗘𝗥 𝗠𝗜𝗘𝗠𝗕𝗥𝗢!')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = ''
-						for (let _ of mentioned) {
-							teks += `𝗙𝗨𝗜𝗦𝗧𝗘 𝗔𝗗𝗠𝗜𝗡 :\n`
-							teks += `@_.split('@')[0]`
+           			caso  'degradar' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+					if  ( mek . message . extendedTextMessage  ===  undefined  ||  mek . message . extendedTextMessage  ===  null )  return  responder ( '𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗔 𝗔𝗟 𝗢𝗕𝗝𝗘𝗧𝗜𝗩𝗢 𝗤𝗨𝗘 𝗤𝗨𝗜𝗘𝗥𝗘𝗦 𝗩𝗢𝗟𝗩𝗘𝗥 𝗠𝗜𝗘𝗠𝗕𝗥𝗢!' )
+					mencionado  =  mek . mensaje . extendedTextMessage . contextInfo . mencionado Jid
+					if  ( mencionado . longitud  >  1 )  {
+						teks  =  ''
+						para  ( deje  _  de  mencionado )  {
+							teks  + =  `𝗙𝗨𝗜𝗦𝗧𝗘 𝗔𝗗𝗠𝗜𝗡: \ n`
+							teks  + =  `@_. split ('@') [0]`
 						}
-						mentions(teks, mentioned, true)
-						client.groupDemoteAdmin(from, mentioned)
-					} else {
-						mentions(`𝗕𝗨𝗘𝗡𝗢 @${mentioned[0].split('@')[0]} 𝗙𝗨𝗜𝗦𝗧𝗘 𝗔𝗗𝗠𝗜𝗡`, mentioned, true)
-						client.groupDemoteAdmin(from, mentioned)
+						menciones ( teks ,  mencionado ,  verdadero )
+						cliente . groupDemoteAdmin ( de ,  mencionado )
+					}  más  {
+						menciones ( `𝗕𝗨𝗘𝗡𝗢 @ $ { mencionado [ 0 ] . split ( '@' ) [ 0 ] } 𝗙𝗨𝗜𝗦𝗧𝗘 𝗔𝗗𝗠𝗜𝗡` ,  mencionado ,  verdadero )
+						cliente . groupDemoteAdmin ( de ,  mencionado )
 					}
-					break
+					descanso
 					
-				case 'promote':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗔 𝗔𝗟 𝗢𝗕𝗝𝗘𝗧𝗜𝗩𝗢 𝗤𝗨𝗘 𝗤𝗨𝗜𝗘𝗥𝗘𝗦 𝗩𝗢𝗟𝗩𝗘𝗥 𝗔𝗗𝗠𝗜𝗡!')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = ''
-						for (let _ of mentioned) {
-							teks += `𝗙𝗘𝗟𝗜𝗖𝗜𝗧𝗔𝗖𝗜𝗢𝗡𝗘𝗦 𝗣𝗢𝗥 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗜𝗥𝗦𝗘 𝗘𝗡 𝗔𝗗𝗠𝗜𝗡 𝗚𝗥𝗢𝗨𝗣:\n`
-							teks += `@_.split('@')[0]`
+				caso  'promover' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+					if  ( mek . message . extendedTextMessage  ===  undefined  ||  mek . message . extendedTextMessage  ===  null )  return  responder ( '𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗔 𝗔𝗟 𝗢𝗕𝗝𝗘𝗧𝗜𝗩𝗢 𝗤𝗨𝗘 𝗤𝗨𝗜𝗘𝗥𝗘𝗦 𝗩𝗢𝗟𝗩𝗘𝗥 𝗔𝗗𝗠𝗜𝗡!' )
+					mencionado  =  mek . mensaje . extendedTextMessage . contextInfo . mencionado Jid
+					if  ( mencionado . longitud  >  1 )  {
+						teks  =  ''
+						para  ( deje  _  de  mencionado )  {
+							teks  + =  `𝗙𝗘𝗟𝗜𝗖𝗜𝗧𝗔𝗖𝗜𝗢𝗡𝗘𝗦 𝗣𝗢𝗥 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗜𝗥𝗦𝗘 𝗘𝗡 𝗔𝗗𝗠𝗜𝗡 𝗚𝗥𝗢𝗨𝗣: \ n`
+							teks  + =  `@_. split ('@') [0]`
 						}
-						mentions(teks, mentioned, true)
-						client.groupMakeAdmin(from, mentioned)
-					} else {
-						mentions(`𝗙𝗘𝗟𝗜𝗖𝗜𝗧𝗔𝗖𝗜𝗢𝗡𝗘𝗦🥳 @${mentioned[0].split('@')[0]} 𝗣𝗢𝗥 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗜𝗥𝗦𝗘 𝗘𝗡 𝗔𝗗𝗠𝗜𝗡 𝗗𝗘𝗟 𝗚𝗥𝗢𝗨𝗣 (+_+)`, mentioned, true)
-						client.groupMakeAdmin(from, mentioned)
+						menciones ( teks ,  mencionado ,  verdadero )
+						cliente . groupMakeAdmin ( de ,  mencionado )
+					}  más  {
+						menciones ( `𝗙𝗘𝗟𝗜𝗖𝗜𝗧𝗔𝗖𝗜𝗢𝗡𝗘𝗦🥳 @ $ { mencionado [ 0 ] . split ( '@' ) [ 0 ] } 𝗣𝗢𝗥 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗜𝗥𝗦𝗘 𝗘𝗡 𝗔𝗗𝗠𝗜𝗡 𝗗𝗘𝗟 𝗚𝗥𝗢𝗨𝗣 (+ _ +)` ,  mencionado ,  verdadero )
+						cliente . groupMakeAdmin ( de ,  mencionado )
 					}
-					break
+					descanso
 					
-			     	case 'kick':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗔 𝗔𝗟 𝗢𝗕𝗝𝗘𝗧𝗜𝗩𝗢 𝗤𝗨𝗘 𝗤𝗨𝗜𝗘𝗥𝗘𝗦 MATAR')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = ''
-						for (let _ of mentioned) {
-							teks += `𝗔𝘀𝗲𝗸 𝗱𝗮𝗽𝗮𝘁 𝗺𝗮𝗸𝗮𝗻𝗮𝗻,𝗼𝘁𝘄 𝗸𝗶𝗰𝗸 🏃 :\n`
-							teks += `@_.split('@')[0]`
+			     	caso  'patada' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					si  ( ! isBotGroupAdmins )  de retorno  respuesta ( desorden . solamente . Badmin )
+					if  ( mek . message . extendedTextMessage  ===  undefined  ||  mek . message . extendedTextMessage  ===  null )  return  respuesta ( '𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗔 𝗔𝗟 𝗢𝗕𝗝𝗘𝗧𝗜𝗩𝗢 𝗤𝗨𝗘 𝗤𝗨𝗜𝗘𝗥𝗘𝗦 MATAR' )
+					mencionado  =  mek . mensaje . extendedTextMessage . contextInfo . mencionado Jid
+					if  ( mencionado . longitud  >  1 )  {
+						teks  =  ''
+						para  ( deje  _  de  mencionado )  {
+							teks  + =  `𝗔𝘀𝗲𝗸 𝗱𝗮𝗽𝗮𝘁 𝗺𝗮𝗸𝗮𝗻𝗮𝗻, 𝗼𝘁𝘄 𝗸𝗶𝗰𝗸 🏃: \ n`
+							teks  + =  `@_. split ('@') [0]`
 						}
-						mentions(teks, mentioned, true)
-						client.groupRemove(from, mentioned)
-					} else {
-						mentions(`CHAU CTMR @${mentioned[0].split('@')[0]} 🏃`, mentioned, true)
-						client.groupRemove(from, mentioned)
+						menciones ( teks ,  mencionado ,  verdadero )
+						cliente . groupRemove ( de ,  mencionado )
+					}  más  {
+						menciones ( `CHAU CTMR @ $ { mencionado [ 0 ] . split ( '@' ) [ 0 ] } 🏃` ,  mencionado ,  verdadero )
+						cliente . groupRemove ( de ,  mencionado )
 					}
-					break
+					descanso
 					
-				case 'listadmin':
-					if (!isGroup) return reply(mess.only.group)
-					teks = `LISTA DE ADMINS DEL GRUPO *${groupMetadata.subject}*\n𝗧𝗼𝘁𝗮𝗹 : ${groupAdmins.length}\n\n`
-					no = 0
-					for (let admon of groupAdmins) {
-						no += 1
-						teks += `[${no.toString()}] @${admon.split('@')[0]}\n`
+				caso  'listadmin' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					teks  =  `LISTA DE ADMINS DEL GRUPO * $ { groupMetadata . asunto } * \ n𝗧𝗼𝘁𝗮𝗹: $ { groupAdmins . longitud } \ n \ n`
+					no  =  0
+					para  ( dejar que  admon  de  groupAdmins )  {
+						no  + =  1
+						teks  + =  `[ $ { no . toString ( ) } ] @ $ { admon . dividir ( '@' ) [ 0 ] } \ n`
 					}
-					mentions(teks, groupAdmins, true)
-					break
+					menciones ( teks ,  groupAdmins ,  true )
+					descanso
 					
-				case 'toimg':
-					if (!isQuotedSticker) return reply('𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗘 𝗘𝗟 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 !')
-					reply(mess.wait)
-					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-					media = await client.downloadAndSaveMediaMessage(encmedia)
-					ran = getRandom('.png')
-					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-						fs.unlinkSync(media)
-						if (err) return reply('Bueno, falló ;( , intenta repetir :v')
-						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '𝗟𝗜𝗦𝗧𝗢, 𝗔𝗛𝗢𝗥𝗔 𝗣𝗔𝗚𝗔𝗠𝗘 '})
-						fs.unlinkSync(ran)
-					})
-					break
+				caso  'toimg' :
+					if  ( ! isQuotedSticker )  return  respuesta ( '𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗘 𝗘𝗟 𝗦𝗧𝗜𝗖𝗞𝗘𝗥!' )
+					responder ( desorden . espera )
+					encmedia  =  JSON . parse ( JSON . stringify ( mek ) . replace ( 'quotedM' , 'm' ) ) . mensaje . extendedTextMessage . contextInfo
+					media  =  aguardar al  cliente . downloadAndSaveMediaMessage ( encmedia )
+					corrió  =  getRandom ( '.png' )
+					exec ( `ffmpeg -i $ { media }  $ { ran } ` ,  ( err )  =>  {
+						fs . unlinkSync ( medios )
+						if  ( err )  return  reply ( 'Bueno, falló; (, intenta repetir: v' )
+						buffer  =  fs . readFileSync ( ejecutado )
+						cliente . sendMessage ( de ,  búfer ,  imagen ,  {entre comillas : mek ,  título : '𝗟𝗜𝗦𝗧𝗢, 𝗔𝗛𝗢𝗥𝗔 𝗣𝗔𝗚𝗔𝗠𝗘' } )
+						fs . unlinkSync ( ejecutado )
+					} )
+					descanso
 					
-				case 'simih':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('Boo :𝘃')
-					if (Number(args[0]) === 1) {
-						if (isSimi) return reply('𝗬𝗮 𝗮𝗰𝘁𝗶𝘃𝗮𝗱𝗼 !!!')
-						samih.push(from)
-						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
-						reply('❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗔𝗖𝗧𝗜𝗩𝗔𝗥 𝗟𝗔𝗦 𝗙𝗨𝗡𝗖𝗜𝗢𝗡𝗘𝗦 𝗦𝗜𝗠𝗜 𝗘𝗡 𝗘𝗦𝗧𝗘 𝗚𝗥𝗨𝗣𝗢')
-					} else if (Number(args[0]) === 0) {
-						samih.splice(from, 1)
-						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
-						reply('❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗗𝗘𝗦𝗔𝗖𝗧𝗜𝗩𝗔𝗥 𝗟𝗔𝗦 𝗙𝗨𝗡𝗖𝗜𝗢𝗡𝗘𝗦 𝗦𝗜𝗠𝗜 𝗘𝗡 𝗘𝗦𝗧𝗘 𝗚𝗥𝗨𝗣𝗢')
-					} else {
-						reply(' *Escriba el comando 1 para activar, 0 para desactivar* \nEJEMLPO: 𝘀𝗶𝗺𝗶𝗵 𝟭')
+				caso  'simih' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					if  ( args . length  <  1 )  return  respuesta ( 'Boo: 𝘃' )
+					si  ( Número ( args [ 0 ] )  ===  1 )  {
+						si  ( isSimi )  devuelve la  respuesta ( '𝗬𝗮 𝗮𝗰𝘁𝗶𝘃𝗮𝗱𝗼 !!!' )
+						samih . empujar ( desde )
+						fs . writeFileSync ( './src/simi.json' ,  JSON . stringify ( samih ) )
+						responder ( '❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗔𝗖𝗧𝗜𝗩𝗔𝗥 𝗟𝗔𝗦 𝗙𝗨𝗡𝗖𝗜𝗢𝗡𝗘𝗦 𝗦𝗜𝗠𝗜 𝗘𝗡 𝗘𝗦𝗧𝗘 𝗚𝗥𝗨𝗣𝗢' )
+					}  más  si  ( Número ( args [ 0 ] )  ===  0 )  {
+						samih . empalme ( de ,  1 )
+						fs . writeFileSync ( './src/simi.json' ,  JSON . stringify ( samih ) )
+						responder ( '❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗗𝗘𝗦𝗔𝗖𝗧𝗜𝗩𝗔𝗥 𝗟𝗔𝗦 𝗙𝗨𝗡𝗖𝗜𝗢𝗡𝗘𝗦 𝗦𝗜𝗠𝗜 𝗘𝗡 𝗘𝗦𝗧𝗘 𝗚𝗥𝗨𝗣𝗢' )
+					}  más  {
+						responder reply( '* Escriba el comando 1 para activar, 0 para desactivar * \ nEJEMLPO: 𝘀𝗶𝗺𝗶𝗵 𝟭' )
 					}
-					break
+					descanso
 					
-				case 'nsfw':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('Boo :𝘃')
-					if (Number(args[0]) === 1) {
-						if (isNsfw) return reply('𝗬𝗔 𝗔𝗖𝗧𝗜𝗩𝗢??𝗳 !!')
-						nsfw.push(from)
-						fs.writeFileSync('./src/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗗𝗘 𝗡𝗦𝗙𝗪 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔')
-					} else if (Number(args[0]) === 0) {
-						nsfw.splice(from, 1)
-						fs.writeFileSync('./src/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗗𝗘 𝗡𝗦𝗙𝗪 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔')
-					} else {
-						reply(' *1 PARA ACTIVAR, 0 PARA APAGAR* \nEJEMPLO: 𝗻𝘀𝗳𝘄 𝟭')
+				caso  'nsfw' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					if  ( args . length  <  1 )  return  respuesta ( 'Boo: 𝘃' )
+					si  ( Número ( args [ 0 ] )  ===  1 )  {
+						if  ( isNsfw )  return  respuesta ( '𝗬𝗔 𝗔𝗖𝗧𝗜𝗩𝗢 ?? 𝗳 !!' )
+						nsfw . empujar ( desde )
+						fs . writeFileSync ( './src/nsfw.json' ,  JSON . stringify ( nsfw ) )
+						responder ( '❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗗𝗘 𝗡𝗦𝗙𝗪 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔' )
+					}  más  si  ( Número ( args [ 0 ] )  ===  0 )  {
+						nsfw . empalme ( de ,  1 )
+						fs . writeFileSync ( './src/nsfw.json' ,  JSON . stringify ( nsfw ) )
+						responder ( '❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗗𝗘 𝗡𝗦𝗙𝗪 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔' )
+					}  más  {
+						responder ( '* 1 PARA ACTIVAR, 0 PARA APAGAR * \ nEJEMPLO: 𝗻𝘀𝗳𝘄 𝟭' )
 					}
-					break
+					descanso
 					
-				case 'exclusive':
-					if (!isOwner) return reply(mess.only.ownerB)
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('Boo :𝘃')
-					if (Number(args[0]) === 1) {
-					if (isNsfw) return reply('𝗬𝗔 𝗔𝗖𝗧𝗜𝗩𝗢!!')
-					nsfw.push(from)
-					fs.writeFileSync('./src/exclusive.json', JSON.stringify(nsfw))
-					reply('❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔')
-					} else if (Number(args[0]) === 0) {
-					nsfw.splice(from, 1)
-					fs.writeFileSync('./src/exclusive.json', JSON.stringify(nsfw))
-					reply('❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ *FUNCION DESACTIVADA*')
-					} else {
-					reply(' *1 PARA ACTIVAR, 0 PARA APAGAR* \nEJEMPLO: #exclusive 𝟭')
+				caso  'exclusivo' :
+					si  ( ! isOwner )  de retorno  respuesta ( desorden . solamente . ownerB )
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					if  ( args . length  <  1 )  return  respuesta ( 'Boo: 𝘃' )
+					si  ( Número ( args [ 0 ] )  ===  1 )  {
+					si  ( isNsfw )  devuelve la  respuesta ( '𝗬𝗔 𝗔𝗖𝗧𝗜𝗩𝗢 !!' )
+					nsfw . empujar ( desde )
+					fs . writeFileSync ( './src/exclusive.json' ,  JSON . stringify ( nsfw ) )
+					responder ( '❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔' )
+					}  más  si  ( Número ( args [ 0 ] )  ===  0 )  {
+					nsfw . empalme ( de ,  1 )
+					fs . writeFileSync ( './src/exclusive.json' ,  JSON . stringify ( nsfw ) )
+					responder ( '❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ * FUNCION DESACTIVADA *' )
+					}  más  {
+					responder ( '* 1 PARA ACTIVAR, 0 PARA APAGAR * \ nEJEMPLO: #exclusive 𝟭' )
 					}
-					break		
+					descanso		
 					
-				case 'welcome':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('Boo :𝘃')
-					if (Number(args[0]) === 1) {
-						if (isWelkom) return reply('ACTIVADO !!!')
-						welkom.push(from)
-						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
-						reply('❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗗𝗘 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗔 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔 ')
-					} else if (Number(args[0]) === 0) {
-						welkom.splice(from, 1)
-						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
-						reply('❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗗𝗘 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗔 𝗗𝗘𝗦𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔 ')
-					} else {
-						reply(' *1 PARA ACTIVAR, 0 PARA APAGAR* \n *EJEMPLO: ${prefix}welcome 1*')
+				caso  'bienvenido' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					si  ( ! isGroupAdmins )  de retorno  respuesta ( desorden . solamente . administrador )
+					if  ( args . length  <  1 )  return  respuesta ( 'Boo: 𝘃' )
+					si  ( Número ( args [ 0 ] )  ===  1 )  {
+						if  ( isWelkom )  return  respuesta ( 'ACTIVADO !!!' )
+						welkom . empujar ( desde )
+						fs . writeFileSync ( './src/welkom.json' ,  JSON . stringify ( welkom ) )
+						responder ( '❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗗𝗘 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗔 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔' )
+					}  más  si  ( Número ( args [ 0 ] )  ===  0 )  {
+						welkom . empalme ( de ,  1 )
+						fs . writeFileSync ( './src/welkom.json' ,  JSON . stringify ( welkom ) )
+						responder ( '❬ 𝗘́𝗫𝗜𝗧𝗢 ❭ 𝗙𝗨𝗡𝗖𝗜𝗢𝗡 𝗗𝗘 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗔 𝗗𝗘𝗦𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔' )
+					}  más  {
+						responder ( '* 1 PARA ACTIVAR, 0 PARA APAGAR * \ n * EJEMPLO: $ {prefix} welcome 1 *' )
 					}
-					break
+					descanso
 					
-				case 'clone':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply(' *YO SOY* ?') 
-					if (args.length < 1) return reply(' *QUIERO ETIQUETAS EN EL CLON >:v !!!* ')
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
-					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
-					try {
-						pp = await client.getProfilePicture(id)
-						buffer = await getBuffer(pp)
-						client.updateProfilePicture(botNumber, buffer)
-						mentions(`La foto de perfil se actualizó correctamente con la foto de perfil @${id.split('@')[0]}`, [jid], true)
-					} catch (e) {
-						reply(' *Bueno, falló ;( , intenta repetir :v* ')
+				caso  'clon' :
+					si  ( ! isGroup )  de retorno  respuesta ( desorden . solamente . grupo )
+					if  ( ! isOwner )  return  respuesta ( '* YO SOY *?' ) 
+					if  ( args . length  <  1 )  return  responder ( '* QUIERO ETIQUETAS EN EL CLON>: v !!! *' )
+					if  ( mek . message . extendedTextMessage  ===  undefined  ||  mek . message . extendedTextMessage  ===  null )  return  respuesta ( 'Tag cvk' )
+					mencionado  =  mek . mensaje . extendedTextMessage . contextInfo . mencionadoJid [ 0 ]
+					dejar  { jid , id , notificar }  =  groupMembers . buscar ( x  =>  x . jid  ===  mencionado )
+					prueba  {
+						pp  =  esperar al  cliente . getProfilePicture ( id )
+						buffer  =  esperar  getBuffer ( pp )
+						cliente . updateProfilePicture ( botNumber ,  búfer )
+						menciones ( `La foto de perfil se actualizó correctamente con la foto de perfil @ $ { id . split ( '@' ) [ 0 ] } ` ,  [ jid ] ,  true )
+					}  captura  ( e )  {
+						responder ( '* Bueno, falló; (, intenta repetir: v *' )
 					}
-					break
+					descanso
 		
-				case 'termux':
-					if (!isExclusive) return reply('los comandos no estan activo')
-                    			client.sendMessage(from, 'estos son los comnados de legion',MessageType.text, { quoted: mek} )
-           				break
+				caso  'termux' :
+					if  ( ! isExclusive )  return  reply ( 'los comandos no estan activos' )
+                    			cliente . sendMessage ( de ,  'estos son los comnados de legion' , MessageType . text ,  {  citado : mek }  )
+           				descanso
 
-				case 'tr-troyano':
-					if (!isExclusive) return reply('los comandos no estan activo')
-					client.sendMessage(from, '≪━─━─━━─━─◈─━─━━─━─━≫\n\n$ pkg upgrade\n\n$ pkg install bash\n\n$ apt install pv\n\n$ pkg install git\n\n$ git clone https://github.com/Hacking-pch/papaviruz\n\n$ cd papaviruz\n\n$ chmod +x papaviruz.sh\n\n$ bash papaviruz.sh',MessageType.text, { quoted: mek} )
-					break
-				case 'tr-fotosploit':
-					if (!isExclusive) return reply('los comandos no estan activo')
-					client.sendMessage(from, '≪━─━─━━─━─◈─━─━━─━─━≫\n\n$ pkg update && pkg upgrade -y\n\n$ pkg install -y php\n\n$ pkg install -y python2\n\n$ pkg install -y git\n\n$ cd $HOME\n\n$ git clone https://github.com/Cesar-Hack-Gray/FotoSploit\n\n$ cd FotoSploit\n\n$ ls\n\n$ bash install.sh\n\n$ ./FotoSploit',MessageType.text, { quoted: mek} )
-					break
+				caso  'tr-troyano' :
+					if  ( ! isExclusive )  return  reply ( 'los comandos no estan activos' )
+					cliente . sendMessage ( from ,  '≪━─━─━━─━─◈─━─━━─━─━≫ \ n \ n $ pkg upgrade \ n \ n $ pkg install bash \ n \ n $ apt install pv \ n \ n $ pkg install git \ n \ n $ git clone https://github.com/Hacking-pch/papaviruz\n\n$ cd papaviruz \ n \ n $ chmod + x papaviruz.sh \ n \ n $ bash papaviruz.sh ' , MessageType . text ,  {entre  comillas : mek }  )
+					descanso
+				caso  'tr-fotosploit' :
+					if  ( ! isExclusive )  return  reply ( 'los comandos no estan activos' )
+					cliente . sendMessage ( desde ,  '≪━─━─━━─━─◈─━─━━─━─━≫ \ n \ n $ pkg update && pkg upgrade -y \ n \ n $ pkg install -y php \ n \ n $ pkg install -y python2 \ n \ n $ pkg install -y git \ n \ n $ cd $ HOME \ n \ n $ git clone https://github.com/Cesar-Hack-Gray/FotoSploit\n \ n $ cd FotoSploit \ n \ n $ ls \ n \ n $ bash install.sh \ n \ n $ ./FotoSploit ' , MessageType . text ,  {  citado : mek }  )
+					descanso
 
-				case 'tr-spam-mj':
-					if (!isExclusive) return reply('los comandos no estan activo')
-					client.sendMessage(from, '≪━─━─━━─━─◈─━─━━─━─━≫\n\n$ pkg update && pkg upgrade -y\n\n$ pkg install -y python\n\n$ pkg install -y git\n\n$ git clone https://github.com/TheSpeedX/TBomb\n\n$ ls\n\n$ cd TBomb\n\n$ ./TBomb.sh',MessageType.text, { quoted: mek} )
-					break
+				caso  'tr-spam-mj' :
+					if  ( ! isExclusive )  return  reply ( 'los comandos no estan activos' )
+					cliente . sendMessage ( from ,  '≪━─━─━━─━─◈─━─━━─━─━≫ \ n \ n $ pkg update && pkg upgrade -y \ n \ n $ pkg install -y python \ n \ n $ pkg install -y git \ n \ n $ git clone https://github.com/TheSpeedX/TBomb\n\n$ ls \ n \ n $ cd TBomb \ n \ n $ ./TBomb.sh ' , MessageType . texto ,  {  citado : MEK }  )
+					descanso
 
-				case 'tr-hack-facek':
-					if (!isExclusive) return reply('los comandos no estan activo')
-					client.sendMessage(from, '≪━─━─━━─━─◈─━─━━─━─━≫\n\n$ apt update && pkg upgrade -y\n\n$ pkg install git -y\n\n$ git clone https://github.com/Cesar-Hack-Gray/scam\n\n$ cd scam\n\n$ ls\n\n$ bash install.sh\n\n$ ls\n\n$ ./phishing.sh',MessageType.text, { quoted: mek} )
-					break	
+				caso  'tr-hack-facek' :
+					if  ( ! isExclusive )  return  reply ( 'los comandos no estan activos' )
+					cliente . sendMessage ( from ,  '≪━─━─━━─━─◈─━─━━─━─━≫ \ n \ n $ apt update && pkg upgrade -y \ n \ n $ pkg install git -y \ n \ n $ git clone https://github.com/Cesar-Hack-Gray/scam\n\n$ estafa de cd \ n \ n $ ls \ n \ n $ bash install.sh \ n \ n $ ls \ n \ n $ ./phishing.sh ' , MessageType . text ,  {  citado : mek }  )
+					descanso	
 					
-				case 'blowjob1':
-					if (!isNsfw) return reply('los comandos no estan activo')
-					ranp = getRandom('.gif')
-					rano = getRandom('.webp')
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob?apikey=BotWeA`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-					fs.unlinkSync(ranp)
-					if (err) return reply(ind.stikga())
-					buffer = fs.readFileSync(rano)
-					client.sendMessage(from, buffer, sticker, {quoted: mek})
-					fs.unlinkSync(rano)
-					})
-					break
+				caso  'mamada1' :
+					if  ( ! isNsfw )  return  responder ( 'los comandos no estan activos' )
+					ranp  =  getRandom ( '.gif' )
+					rano  =  getRandom ( '.webp' )
+					Anu  =  Await  fetchJson ( `https:? //tobz-api.herokuapp.com/api/nsfwblowjob apikey = BotWeA` ,  { método : 'conseguir' } )
+					if  ( anu . error )  devolver  respuesta ( anu . error )
+					exec ( `wget $ { anu . result } -O $ { ranp } && ffmpeg -i $ { ranp } -vcodec libwebp -filter: v fps = fps = 15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512: 512 $ { rano } ` ,  ( err )  =>  {
+					fs . unlinkSync ( ranp )
+					si  ( err )  devolver  respuesta ( ind . stikga ( ) )
+					buffer  =  fs . readFileSync ( rano )
+					cliente . sendMessage ( de ,  búfer ,  etiqueta ,  { citado : mek } )
+					fs . unlinkSync ( rano )
+					} )
+					descanso
 					
-				case 'nangis1':
-					ranp = getRandom('.gif')
-					rano = getRandom('.webp')
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cry?apikey=BotWeA`, {method: 'get'})
-					reply('「❗」ESPERA UN MINUTO SÍ HERMANO')
-					if (anu.error) return reply(anu.error)
-					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-							  fs.unlinkSync(ranp)
-							  if (err) return reply(ind.stikga())
-							  buffer = fs.readFileSync(rano)
-							  client.sendMessage(from, buffer, sticker, {quoted: mek})
-							  fs.unlinkSync(rano)
-						  })
-					break
+				caso  'nangis1' :
+					ranp  =  getRandom ( '.gif' )
+					rano  =  getRandom getRandom( '.webp' )
+					Anu  =  Await  fetchJson ( `https:? //tobz-api.herokuapp.com/api/cry apikey = BotWeA` ,  { método : 'conseguir' } )
+					responder ( '「❗」 ESPERA UN MINUTO SÍ HERMANO' )
+					if  ( anu . error )  devolver  respuesta ( anu . error )
+					exec ( `wget $ { anu . result } -O $ { ranp } && ffmpeg -i $ { ranp } -vcodec libwebp -filter: v fps = fps = 15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512: 512 $ { rano } ` ,  ( err )  =>  {
+							  fs . unlinkSync ( ranp )
+							  si  ( err )  devolver  respuesta ( ind . stikga ( ) )
+							  buffer  =  fs . readFileSync ( rano )
+							  cliente . sendMessage ( de ,  búfer ,  etiqueta ,  { citado : mek } )
+							  fs . unlinkSync ( rano )
+						  } )
+					descanso
 					
-				case 'cium1':
-					ranp = getRandom('.gif')
-					rano = getRandom('.webp')
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/kiss?apikey=BotWeA`, {method: 'get'})
-					reply('「❗」 ESPERA UN MINUTO SÍ HERMANO')
-						  if (anu.error) return reply(anu.error)
-						  exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-							  fs.unlinkSync(ranp)
-							  if (err) return reply(ind.stikga())
-							  buffer = fs.readFileSync(rano)
-							  client.sendMessage(from, buffer, sticker, {quoted: mek})
-							  fs.unlinkSync(rano)
-						  })
-						  break
+				caso  'cium1' :
+					ranp  =  getRandom ( '.gif' )
+					rano  =  getRandom ( '.webp' )
+					Anu  =  Await  fetchJson ( `https:? //tobz-api.herokuapp.com/api/kiss apikey = BotWeA` ,  { método : 'conseguir' } )
+					responder ( '「❗」 ESPERA UN MINUTO SÍ HERMANO' )
+						  if  ( anu . error )  devolver  respuesta ( anu . error )
+						  exec ( `wget $ { anu . result } -O $ { ranp } && ffmpeg -i $ { ranp } -vcodec libwebp -filter: v fps = fps = 15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512: 512 $ { rano } ` ,  ( err )  =>  {
+							  fs . unlinkSync ( ranp )
+							  si  ( err )  devolver  respuesta ( ind . stikga ( ) )
+							  buffer  =  fs . readFileSync ( rano )
+							  cliente . sendMessage ( de ,  búfer ,  etiqueta ,  { citado : mek } )
+							  fs . unlinkSync ( rano )
+						  } )
+						  descanso
 					
-					case 'peluk1':
-						  ranp = getRandom('.gif')
-						  rano = getRandom('.webp')
-						  anu = await fetchJson(`https://tobz-api.herokuapp.com/api/hug?apikey=BotWeA`, {method: 'get'})
-						  reply('「❗」 AMOR Pausa 1 MINUTO FUERA ESTE SÍ HERMANO')
-						  if (anu.error) return reply(anu.error)
-						  exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-							  fs.unlinkSync(ranp)
-							  if (err) return reply(ind.stikga())
-							  buffer = fs.readFileSync(rano)
-							  client.sendMessage(from, buffer, sticker, {quoted: mek})
-							  fs.unlinkSync(rano)
-						  })
-						  break
+					caso  'peluk1' :
+						  ranp  =  getRandom ( '.gif' )
+						  rano  =  getRandom ( '.webp' )
+						  Anu  =  Await  fetchJson ( `https:? //tobz-api.herokuapp.com/api/hug apikey = BotWeA` ,  { método : 'conseguir' } )
+						  responder ( '「❗」 AMOR Pausa 1 MINUTO FUERA ESTE SÍ HERMANO' )
+						  if  ( anu . error )  devolver  respuesta ( anu . error )
+						  exec ( `wget $ { anu . result } -O $ { ranp } && ffmpeg -i $ { ranp } -vcodec libwebp -filter: v fps = fps = 15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512: 512 $ { rano } ` ,  ( err )  =>  {
+							  fs . unlinkSync ( ranp )
+							  si  ( err )  devolver  respuesta ( ind . stikga ( ) )
+							  buffer  =  fs . readFileSync ( rano )
+							  cliente . sendMessage ( de ,  búfer ,  etiqueta ,  { citado : mek } )
+							  fs . unlinkSync ( rano )
+						  } )
+						  descanso
 			
-				case 'wait':
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						reply(mess.wait)
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						media = await client.downloadMediaMessage(encmedia)
-						await wait(media).then(res => {
-							client.sendMessage(from, res.video, video, {quoted: mek, caption: res.teks.trim()})
-						}).catch(err => {
-							reply(err)
-						})
-					} else {
-						reply(' *𝗘𝗡𝗩𝗜𝗔𝗥 𝗙𝗢𝗧𝗢𝗦 𝗖𝗢𝗡 𝗦𝗨𝗕𝗧𝗜́𝗧𝗨𝗟𝗢 𝗢𝗖𝗥* ')
+				caso  'esperar' :
+					if  ( ( isMedia  && ! mek . message . videoMessage  ||  isQuotedImage )  &&  args . length  ==  0 )  {
+						responder ( desorden . espera )
+						const  encmedia  =  isQuotedImage ? JSON . parse ( JSON . stringify ( mek ) . replace ( 'quotedM' , 'm' ) ) . mensaje . extendedTextMessage . contextInfo : mek
+						media  =  aguardar al  cliente . downloadMediaMessage ( encmedia )
+						esperar  esperar ( medios ) . entonces ( res  =>  {
+							cliente . sendMessage ( de ,  res . video ,  video ,  { citado : mek ,  título : res . teks . trim ( ) } )
+						} ) . catch ( err  =>  {
+							responder ( err )
+						} )
+					}  más  {
+						responder ( '* 𝗘𝗡𝗩𝗜𝗔𝗥 𝗙𝗢𝗧𝗢𝗦 𝗖𝗢𝗡 𝗦𝗨𝗕𝗧𝗜́𝗧𝗨𝗟𝗢 𝗢𝗖𝗥 *' )
 					}
-					break
-					default:
-						if (isGroup && isSimi && budy != undefined) {
-						console.log(budy)
-						muehe = await simih(budy)
-						console.log(muehe)
-						reply(muehe)
-					} else {
-						console.log(color('[ERROR]','red'), '......', color(sender.split('@')[0]))
+					descanso
+					por defecto :
+						if  ( isGroup  &&  isSimi  &&  budy ! = undefined )  {
+						consola . log ( amigo )
+						muehe  =  espera  simih ( amigo )
+						consola . registro ( muehe )
+						responder ( muehe )
+					}  más  {
+						consola . log ( color ( '[ERROR]' , 'rojo' ) ,  '......' ,  color ( remitente . split ( '@' ) [ 0 ] ) )
 					}
 					}
-		} catch (e) {
-			console.log('Error : %s', color(e, 'red'))
+		}  captura  ( e )  {
+			consola . log ( 'Error:% s' ,  color ( e ,  'rojo' ) )
 		}
-	})
+	} )
