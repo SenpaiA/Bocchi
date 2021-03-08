@@ -1,3 +1,4 @@
+  
 const
 {
    WAConnection,
@@ -34,7 +35,7 @@ const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
             + 'FN:Argote Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=51916659000:+51 916 659 000\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=593995743368:+593 99 574 3368\n' 
             + 'END:VCARD' 
 prefix = '#'
 blocked = []          
@@ -49,7 +50,7 @@ const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
     XBOT: '🇳🇮⃟᤻۞꙰⃪░ҒƁƖ ⃪࿗᭄⃟᤻ ⃟꙰࿃', 
     instagram: 'tal vez', 
-    nomer: 'wa.me/+51916659000',
+    nomer: 'wa.me/+593995743368',
     youtube: 'algun dia', 
     whatsapp: 'Comming soon', 
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
@@ -168,7 +169,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["51916659000@s.whatsapp.net"] 
+			const ownerNumber = ["593995743368@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -267,7 +268,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nombre del bot* : ${me.name}\n*PROPIETARIO* : *꧁⟦⸙ꪶ•Λ̸Я̸G̸Ө̸Ŧ̸Σ̸₂₀₁₉•ꫂ⸙⟧^Iᴠᴄ꧂*\n*AUTOR* : AMPIBI\n*Nombre del bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total de contactos bloqueados* : ${blocked.length}\n*EL ESTA ACTIVO DESDE HACE* : ${kyun(uptime)}`
+					teks = `*Nombre del bot* : ${me.name}\n*PROPIETARIO* : *Senpia Maid*\n*AUTOR* : AMPIBI\n*Nombre del bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total de contactos bloqueados* : ${blocked.length}\n*EL ESTA ACTIVO DESDE HACE* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
