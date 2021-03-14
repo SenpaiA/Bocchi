@@ -85,7 +85,7 @@ const help = (prefix) => {
 ┣⊱ *${prefix}setpp*
 ┣⊱ *${prefix}setprefix*
 ┣━━━━━━━━━━━━━━
-┃ *BOT MODIFICADO POR Senpi, DISFRUTEN*
+┃ *BOT MODIFICADO POR ARGOTE, DISFRUTEN*
 ┗━━━━━━━━━━━━━━
 `
 }
